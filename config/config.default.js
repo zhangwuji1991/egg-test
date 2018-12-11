@@ -28,7 +28,17 @@ module.exports = appInfo => {
   config.cors = {
     // origin: '*',
     allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH'
+  };
+
+  config.mongoose = {
+    url: process.env.EGG_MONGODB_URL || 'mongodb://localhost:27018/blog',
+    options: {
+      server: {
+        poolSize: 20
+      },
+    },
   }
+
  
   return config;
 };

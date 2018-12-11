@@ -17,12 +17,12 @@ class NewsController extends Controller {
   async content() {
     //获取get传值 ctx.query
     var query = this.ctx
-    console.log(query)
+    const datalist = await this.service.user.findAll();
     // 返回前端数据
     this.ctx.body = {
       code: 0,
       msg: '获取成功',
-      data: await this.other()
+      data: datalist
     }
   }
   

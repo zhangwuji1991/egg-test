@@ -4,7 +4,9 @@ const Controller = require('egg').Controller;
 
 class HomeController extends Controller {
   async index() {
-    this.ctx.body = 'hi, home';
+    const datalist = await this.service.user.findAll();
+    console.log(datalist)
+    this.ctx.body = 'datalist';
   }
 }
 
